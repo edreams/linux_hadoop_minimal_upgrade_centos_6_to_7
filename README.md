@@ -1,6 +1,6 @@
 # linux_hadoop_minimal_upgrade_centos_6_to_7
 
-####################################################
+############################################################################################
 Centos 6.10 to Centos 7.x Linux Hadoop Minimal, maybe work....
 maybe...and just maybe by Rodrigo Vargas A. Santiago, Chile 
 NOTE: Shannon C, wow wow wow, nice hair 1313 :) 
