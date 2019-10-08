@@ -3,7 +3,11 @@
 ############################################################################################
 Centos 6.10 to Centos 7.x Linux Hadoop Minimal, maybe work....
 maybe...and just maybe by Rodrigo Vargas A. Santiago, Chile 
-NOTE: Shannon C, wow wow wow, nice hair 1313 :) 
+
+"NOTE: Shannon C, wow wow wow, nice hair 1313 :) "
+
+Result: CentOS Linux release 7.7.1908 (Core) CentOS Linux release 7.7.1908 (Core) cpe:/o:centos:centos:7
+
 08/10/2019 
 
 For the second class of Douglas Eadline of :
@@ -11,9 +15,9 @@ Hands-on Introduction to Apache Hadoop and Spark Programming
 A quick-start introduction to the important facets of big data analytics
 https://learning.oreilly.com/live-training/courses/hands-on-introduction-to-apache-hadoop-and-spark-programming/0636920326755/
  
-for : Douglas endline (https://www.clustermonkey.net/scalable-analytics/doku.php?id=start)
+for : Douglas Eadline (https://www.clustermonkey.net/scalable-analytics/doku.php?id=start)
 
-Result: CentOS Linux release 7.7.1908 (Core) CentOS Linux release 7.7.1908 (Core) cpe:/o:centos:centos:7
+
 ####################################################
 
 If you use KVM/QEMU then
