@@ -1,0 +1,1 @@
+# linux_hadoop_minimal_upgrade_centos_6_to_7
