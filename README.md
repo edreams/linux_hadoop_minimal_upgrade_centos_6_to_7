@@ -13,6 +13,7 @@ https://learning.oreilly.com/live-training/courses/hands-on-introduction-to-apac
  
 for : Douglas endline (https://www.clustermonkey.net/scalable-analytics/doku.php?id=start)
 
+Result: CentOS Linux release 7.7.1908 (Core) CentOS Linux release 7.7.1908 (Core) cpe:/o:centos:centos:7
 ####################################################
 
 If you use KVM/QEMU then
@@ -114,6 +115,7 @@ https://www.clustermonkey.net/scalable-analytics/doku.php?id=start
 ###########################
 
 [root@localhost ~]# cat /etc/*release*
+
 CentOS Linux release 7.7.1908 (Core)
 Derived from Red Hat Enterprise Linux 7.7 (Source)
 NAME="CentOS Linux"
@@ -137,6 +139,7 @@ CentOS Linux release 7.7.1908 (Core)
 cpe:/o:centos:centos:7
 
 [root@localhost ~]# jps
+
 2193 SecondaryNameNode
 4242 SparkSubmit
 4194 RemoteInterpreterServer
