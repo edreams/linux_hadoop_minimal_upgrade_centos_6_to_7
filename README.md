@@ -14,6 +14,7 @@ https://learning.oreilly.com/live-training/courses/hands-on-introduction-to-apac
 for : Douglas endline (https://www.clustermonkey.net/scalable-analytics/doku.php?id=start)
 
 ####################################################
+
 If you use KVM/QEMU then
 Download : tar -xvf Linux-Hadoop-Minimal-0.42.ova
 wget --no-check-certificate https://www.clustermonkey.net/download/Hands-on_Hadoop_Spark/Linux-Hadoop-Minimal-0.42.ova
@@ -32,6 +33,7 @@ Linux-Hadoop-Minimal_1 1-disk001.vmdk  (this is important)
 
 then start the virt-manager and conf based in the value that appear in 
 ####################################################
+
 Steps:1
 
 1.- cat > /etc/yum.repos.d/centos-upgrade.repo <<EOF
@@ -92,6 +94,7 @@ SELINUX=disabled
 39 .-    alternatives --config javac (Choose the same )
 
 ###################
+
 Now start the services
 
 /usr/sbin/start-hdfs.sh /usr/sbin/start-yarn.sh /usr/sbin/start-derby.sh /usr/sbin/start-hive-metastore.sh /usr/sbin/start-hiveserver2.sh /usr/sbin/start-zeppelin.sh
@@ -102,6 +105,7 @@ https://www.clustermonkey.net/scalable-analytics/doku.php?id=start
 
 
 ###########################
+
 [root@localhost ~]# cat /etc/*release*
 CentOS Linux release 7.7.1908 (Core)
 Derived from Red Hat Enterprise Linux 7.7 (Source)
