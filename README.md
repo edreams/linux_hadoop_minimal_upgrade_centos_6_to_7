@@ -63,56 +63,98 @@ EOF
 4.-  rpm --import http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-7
 
 5.- mkdir -pv /var/tmp/system-upgrade/base/ /var/tmp/system-upgrade/extras/ /var/tmp/system-upgrade/updates/
+
 6.- echo http://mirror.centos.org/centos/7/os/x86_64/ >> /var/tmp/system-upgrade/base/mirrorlist.txt
- 7.-  echo http://mirror.centos.org/centos/7/extras/x86_64/ >> /var/tmp/system-upgrade/extras/mirrorlist.txt
- 8.-   echo http://mirror.centos.org/centos/7/updates/x86_64/ >> /var/tmp/system-upgrade/updates/mirrorlist.txt
+
+7.-  echo http://mirror.centos.org/centos/7/extras/x86_64/ >> /var/tmp/system-upgrade/extras/mirrorlist.txt
+
+8.-   echo http://mirror.centos.org/centos/7/updates/x86_64/ >> /var/tmp/system-upgrade/updates/mirrorlist.txt
+
 ###Pre upgrade######
 ############
+
 9.- yes | preupg -v
+
 ##############
+
 #####Now upgrade #######
+
 10.- centos-upgrade-tool-cli --network=7 --instrepo=http://vault.centos.org/7.0.1406/os/x86_64/
+
 11.- reboot
+
 12.- ip a
+
 13.- dhclient
+
 14.- Disabled Selinux -> setenforce 0
 , but permanent -> vi /etc/selinux/config 
 SELINUX=disabled
+
 15.- MOST IMPORTANT STEP IS->
  link /usr/lib64/libpcre.so.1 /lib64/libpcre.so.0
+
 16.- reboot
+
 17.- dhclient ; systemctl  enable --now sshd
+
 18.- ip a -> ssh root@IP -p 2222
-19.-   systemctl enable blk-availability && systemctl start blk-availability.service
-20.-    systemctl enable ip6tables && systemctl start ip6tables.service
-21.-   systemctl enable iscsi && systemctl start iscsi.service
+
+19.-  systemctl enable blk-availability && systemctl start blk-availability.service
+
+20.-  systemctl enable ip6tables && systemctl start ip6tables.service
+
+21.-  systemctl enable iscsi && systemctl start iscsi.service
+
 22.-  systemctl enable messagebus && systemctl start messagebus.service
+
 23.- systemctl enable portreserve && systemctl start portreserve.service
+
 24.-   systemctl enable postfix && systemctl start postfix.service
+
 25.-   systemctl enable udev-post && systemctl start udev-post.service
+
 26.- yum install NetworkManager
+
 27.- systemctl enable --now NetworkManager
+
 28.- yum install rpcbind nfs-utils -y
+
 29.- wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
+
 30.-    sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm
+
 31.-  yum update
+
 32.-    sudo yum install mysql-server
+
 33.-  systemctl enable --now mysqld
+
 34.- cd   /usr/lib/jvm/
+
 35.- mv java-1.8.0-openjdk-1.8.0.222.b10-1.el7_7.x86_64 java-1.8.0-openjdk.x86_64
+
 36.- alternatives --install /usr/bin/java java /usr/lib/jvm/java-1.8.0-openjdk.x86_64/bin/java 1
+
 37.- alternatives --install /usr/bin/javac javac /usr/lib/jvm/java-1.8.0-openjdk.x86_64/bin/javac 1
+
 38.- alternatives --config java (Choose the java-1.8.0-openjdk.x86_64
+
 39 .-    alternatives --config javac (Choose the same )
 
 ###################
 
 Now start the services
 
-/usr/sbin/start-hdfs.sh /usr/sbin/start-yarn.sh /usr/sbin/start-derby.sh /usr/sbin/start-hive-metastore.sh /usr/sbin/start-hiveserver2.sh /usr/sbin/start-zeppelin.sh
+/usr/sbin/start-hdfs.sh 
+/usr/sbin/start-yarn.sh
+/usr/sbin/start-derby.sh 
+/usr/sbin/start-hive-metastore.sh
+/usr/sbin/start-hiveserver2.sh
+/usr/sbin/start-zeppelin.sh
 
 and so on……
-and follow the page of Douglas Endline
+and follow the page of Douglas Eadline
 https://www.clustermonkey.net/scalable-analytics/doku.php?id=start
 
 
@@ -145,15 +187,25 @@ cpe:/o:centos:centos:7
 [root@localhost ~]# jps
 
 2193 SecondaryNameNode
+
 4242 SparkSubmit
+
 4194 RemoteInterpreterServer
+
 2405 ResourceManager
+
 2470 NodeManager
+
 2264 DataNode
+
 2088 NameNode
+
 4088 ZeppelinServer
+
 6474 Jps
+
 4154 RemoteInterpreterServer
+
 2699 JobHistoryServer
 
 And so on
