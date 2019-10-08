@@ -21,14 +21,21 @@ wget --no-check-certificate https://www.clustermonkey.net/download/Hands-on_Hado
 
 
 
-then 
-#tar -xvf Linux-Hadoop-Minimal-0.42.ova -> this create 3 files,
+then :
+
+a) tar -xvf Linux-Hadoop-Minimal-0.42.ova -> this create 3 files,
 : .vmdk, .ovf(see it for conf of the virtual machine) and other .mf
-Linux-Hadoop-Minimal-0.42.mf (not use)
-Linux-Hadoop-Minimal-0.42.ovf (only for see the values for the virtual machine, if u want)
-Linux-Hadoop-Minimal_1 1-disk001.vmdk  (this is important)
-#qemu-img convert -f vmdk -O qcow2 Linux-Hadoop-Minimal_1\ 1-disk001.vmdk Linux-Hadoop-Minimal-0.42.qcow2
+
+a.1)Linux-Hadoop-Minimal-0.42.mf (not use)
+
+a.2)Linux-Hadoop-Minimal-0.42.ovf (only for see the values for the virtual machine, if u want)
+
+a.3)Linux-Hadoop-Minimal_1 1-disk001.vmdk  (this is important)
+
+b) qemu-img convert -f vmdk -O qcow2 Linux-Hadoop-Minimal_1\ 1-disk001.vmdk Linux-Hadoop-Minimal-0.42.qcow2
+
 == If is neccesary resize then ===
+
 -> qemu-img resize /var/lib/libvirt/images/Linux-Hadoop-Minimal-0.42.qcow2 +40G
 
 then start the virt-manager and conf based in the value that appear in 
